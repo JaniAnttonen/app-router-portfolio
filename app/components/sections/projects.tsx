@@ -22,6 +22,11 @@ const Projects = () => {
       url: "https://github.com/JaniAnttonen/notion-to-md-worker",
     },
     {
+      name: "Junction 2022 Side Challenge, Eiger",
+      description: "A hackathon side challenge for Eiger in Junction 2022. A challenge that relied on poor private key management and a re-entrancy attack. Design, implementation and deployment by yours truly.",
+      url: "https://github.com/JaniAnttonen/junction-side-challenge"
+    },
+    {
       name: "strobonator",
       description: "A small hackathon project done with MicroPython for controlling the Disobey 2019 badge's LEDs. One of the projects that didn't brick your badge.",
       url: "https://github.com/JaniAnttonen/strobonator"
