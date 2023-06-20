@@ -1,10 +1,15 @@
-import { ArrowTopRightIcon, GitHubLogoIcon, LinkedInLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons"
+import { ArrowTopRightIcon, FileTextIcon, GitHubLogoIcon, LinkedInLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons"
 import Image from "next/image"
 import Link from "next/link"
 import Title from "../primitives/title"
 
 const Links = () => {
   const links = [
+    {
+      title: "CV",
+      url: "/resume.pdf",
+      icon: FileTextIcon
+    },
     {
       title: "Twitter",
       url: "https://twitter.com/JaniAnttonen",
