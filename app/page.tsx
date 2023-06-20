@@ -6,7 +6,7 @@ import Projects from './components/sections/projects'
 
 const Home = () => {
   return (
-    <main className="flex flex-col px-10 py-8">
+    <main className="flex flex-col md:px-10 md:py-8 px-3 py-4">
       <Introduction />
       <Links />
       <Mirror />

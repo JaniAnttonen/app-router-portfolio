@@ -35,7 +35,7 @@ const Links = () => {
     <section>
       <Title>Links</Title>
 
-      <ul className="flex flex-row gap-3">
+      <ul className="flex flex-row gap-3 flex-wrap">
         {links.map((link) => (
           <Link href={link.url} key={`link-${link.title}`} className="flex flex-row items-center gap-1 hover:underline">
             <link.icon />
