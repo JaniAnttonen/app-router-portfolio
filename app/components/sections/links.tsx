@@ -11,11 +11,6 @@ const Links = () => {
       icon: FileTextIcon
     },
     {
-      title: "Twitter",
-      url: "https://twitter.com/JaniAnttonen",
-      icon: TwitterLogoIcon
-    },
-    {
       title: "GitHub",
       url: "https://github.com/JaniAnttonen",
       icon: GitHubLogoIcon,
@@ -24,6 +19,11 @@ const Links = () => {
       title: "LinkedIn",
       url: "https://www.linkedin.com/in/janttonen/",
       icon: LinkedInLogoIcon,
+    },
+    {
+      title: "Twitter",
+      url: "https://twitter.com/JaniAnttonen",
+      icon: TwitterLogoIcon
     },
     {
       title: "Mirror",
