@@ -22,7 +22,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run Tectonic
-        run: tectonic ./app/components/sections/cv/resume.tex --outdir ./dist
+        run: mkdir dist && tectonic ./app/components/sections/cv/resume.tex --outdir ./dist
 
       - name: Deploy PDF
         uses: peaceiris/actions-gh-pages@v3
