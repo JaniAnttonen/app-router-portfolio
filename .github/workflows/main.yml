@@ -1,4 +1,4 @@
-name: 'Build resume.pdf'
+name: 'Build&deploy resume.pdf'
 on:
   push:
 jobs:
@@ -8,6 +8,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - uses: actions/cache@v3
         name: Tectonic Cache
         with:
@@ -15,13 +16,17 @@ jobs:
           key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
           restore-keys: |
             ${{ runner.os }}-tectonic-
+
       - uses: wtfjoke/setup-tectonic@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Run Tectonic
         run: tectonic ./app/components/sections/cv/resume.tex --outdir ./public
-      - name: Release PDF
-        uses: softprops/action-gh-release@v1
+
+      - name: Deploy PDF
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
         with:
-          files: |
-            ./public/resume.pdf
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
