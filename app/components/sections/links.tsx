@@ -7,7 +7,7 @@ const Links = () => {
   const links = [
     {
       title: "CV",
-      url: "/resume.pdf",
+      url: "https://janianttonen.github.io/app-router-portfolio/resume.pdf",
       icon: FileTextIcon
     },
     {
