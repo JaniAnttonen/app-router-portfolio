@@ -19,9 +19,9 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Run Tectonic
-        run: tectonic ./app/components/sections/cv/resume.tex
-      - name: Upload pdf
-        uses: actions/upload-artifact@v3
+        run: tectonic ./app/components/sections/cv/resume.tex --outdir ./public
+      - name: Release PDF
+        uses: softprops/action-gh-release@v1
         with:
-          name: resume-janianttonen
-          path: ./public/resume.pdf
+          files: |
+            ./public/resume.pdf
