@@ -10,7 +10,6 @@ const Introduction = () => {
           <h1 className="text-2xl font-bold">Jani Anttonen</h1>
           <p className="text-lg">Software Engineer</p>
           <div className="flex flex-row gap-3 flex-wrap">
-            <ContactInfo>ENS: jantto.eth</ContactInfo>
             <ContactInfo>Email: jani.anttonen@protonmail.ch</ContactInfo>
           </div>
         </div>
