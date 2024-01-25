@@ -1,4 +1,4 @@
-name: 'Build&deploy resume.pdf'
+name: "Build&deploy resume.pdf"
 on:
   push:
 jobs:
