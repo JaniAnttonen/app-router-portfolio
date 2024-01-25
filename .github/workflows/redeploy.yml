@@ -1,0 +1,16 @@
+name: Republish
+
+on:
+  schedule:
+    - cron: "1 12 * * *"
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger a GitHub pages rebuild
+        run: |
+          curl --fail --request POST \
+            --url  https://api.github.com/repos/JaniAnttonen/app-router-portfolio/pages/builds \
+            --header "Authorization: Bearer $USER_TOKEN"
+        env:
+          USER_TOKEN: ${{ secrets.USER_TOKEN }}
