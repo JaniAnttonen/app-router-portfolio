@@ -1,9 +1,9 @@
-import ExternalLink from "../primitives/externallink"
-import { List, ListItem } from "../primitives/list"
-import Title from "../primitives/title"
+import ExternalLink from "../primitives/externallink";
+import { List, ListItem } from "../primitives/list";
+import Title from "../primitives/title";
 
 const getMirrorBlogPosts = async () => {
-  const res = await fetch("/api/mirror/get", {
+  const res = await fetch("https://janianttonen.com/api/mirror/get", {
     next: {
       revalidate: 3600
     },
