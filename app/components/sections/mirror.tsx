@@ -1,20 +1,18 @@
-import Parser from "rss-parser"
 import ExternalLink from "../primitives/externallink"
 import { List, ListItem } from "../primitives/list"
 import Title from "../primitives/title"
 
 const getMirrorBlogPosts = async () => {
-  const res = await fetch("https://mirror.xyz/jantto.eth/feed/atom")
-  console.log(res)
+  const res = await fetch("/api/mirror/get", {
+    next: {
+      revalidate: 3600
+    },
+  })
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
+    throw new Error("Failed to fetch data: " + res.statusText)
   }
-  
-  const parser = new Parser()
-  const feed = await parser.parseString(await res.text())
 
-  return feed
+  return res.json()
 }
 
 const Mirror = async () => {
@@ -26,7 +24,7 @@ const Mirror = async () => {
         Blog
       </Title>
       <List>
-      {items.map((post) => (
+      {items.map((post: any) => (
         <ListItem key={post.link}>
           <time className="text-sm opacity-60">{post.isoDate}</time>
           <ExternalLink href={post.link || ""}>{post.title}</ExternalLink>
