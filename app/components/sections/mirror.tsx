@@ -5,7 +5,7 @@ import Title from "../primitives/title"
 
 const getMirrorBlogPosts = async () => {
   const res = await fetch("https://mirror.xyz/jantto.eth/feed/atom")
-  
+  console.log(res)
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch data')
