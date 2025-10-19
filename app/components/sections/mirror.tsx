@@ -3,19 +3,23 @@ import { List, ListItem } from "../primitives/list";
 import Title from "../primitives/title";
 
 const getMirrorBlogPosts = async () => {
-  const res = await fetch("https://janianttonen.com/api/mirror", {
-    next: {
-      revalidate: 3600
-    },
-  })
-  if (!res.ok) {
-    console.log(res.statusText)
-    // throw new Error("Failed to fetch data: " + res.statusText)
-  } else {
-    console.log("Fetched mirror blog posts: ", await res.text())
+  try {
+    const res = await fetch("https://janianttonen.com/api/mirror", {
+      next: {
+        revalidate: 3600
+      },
+    })
+    if (!res.ok) {
+      console.log(res.statusText)
+      throw new Error("Failed to fetch data: " + res.statusText)
+    } else {
+      console.log("Fetched mirror blog posts: ", await res.text())
+    }
+    return res.json()
+  } catch (error) {
+    console.log("Error fetching mirror blog posts: ", error)
+    return { items: [] }
   }
-
-  return res.json()
 }
 
 const Mirror = async () => {
