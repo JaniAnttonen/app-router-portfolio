@@ -10,7 +10,7 @@ export async function GET(_request: Request) {
   
   const parser = new XMLParser()
   const feed = parser.parse(await res.text())
-
+  
   return new Response(JSON.stringify(feed), {
     status: 200,
   })
