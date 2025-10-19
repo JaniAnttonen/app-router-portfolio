@@ -3,7 +3,7 @@ import { List, ListItem } from "../primitives/list";
 import Title from "../primitives/title";
 
 const getMirrorBlogPosts = async () => {
-  const res = await fetch("https://janianttonen.com/api/mirror/get", {
+  const res = await fetch("https://janianttonen.com/api/mirror", {
     next: {
       revalidate: 3600
     },

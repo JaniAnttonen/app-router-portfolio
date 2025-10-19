@@ -1,4 +1,4 @@
-import Parser from "rss-parser"
+import { XMLParser } from "fast-xml-parser"
 
 export const runtime = "edge"
 
@@ -8,8 +8,8 @@ export async function GET(_request: Request) {
     throw new Error("Failed to fetch data: " + res.statusText)
   }
   
-  const parser = new Parser()
-  const feed = await parser.parseString(await res.text())
+  const parser = new XMLParser()
+  const feed = parser.parse(await res.text())
 
   return new Response(JSON.stringify(feed), {
     status: 200,
