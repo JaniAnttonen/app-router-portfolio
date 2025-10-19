@@ -9,6 +9,7 @@ const getMirrorBlogPosts = async () => {
     },
   })
   if (!res.ok) {
+    console.log(res.statusText)
     throw new Error("Failed to fetch data: " + res.statusText)
   }
 
