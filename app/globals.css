@@ -17,6 +17,9 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+  font-size: 3rem;
+  letter-spacing: 0.1rem;
+  font-weight: 900 !important;
 }
 
 .appicon {
