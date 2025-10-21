@@ -31,8 +31,9 @@ const Mirror = async () => {
       <List>
       {items.map((post: any) => (
         <ListItem key={post.id}>
-          <time className="text-sm opacity-60">{post.isoDate}</time>
-          <ExternalLink href={post.id || ""}>{post.title}</ExternalLink>
+          <time className="text-sm opacity-60">{post.updated}</time>
+          <h2 className="font-bold"><ExternalLink href={post.id || ""}>{post.title}</ExternalLink></h2>
+          <p className="text-sm opacity-60" dangerouslySetInnerHTML={{ __html: post.content }}></p>
         </ListItem>
       ))}
       </List>

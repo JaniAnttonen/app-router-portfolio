@@ -1,14 +1,15 @@
 import Image from "next/image"
 import ContactInfo from "../primitives/contactinfo"
+import { therma } from "../primitives/fonts"
 
 const Introduction = () => {
   return (
     <section>
       <div className="flex flex-row gap-6">
-        <Image src="/avatar.jpg" width={120} height={120} alt={"avatar"} className="mix-blend-luminosity appicon" />
+        <Image src="/avatar.jpg" width={120} height={120} alt={"avatar"} className="mix-blend-luminosity" />
         <div className="flex flex-col justify-evenly">
-          <h1 className="text-2xl font-bold">Jani Anttonen</h1>
-          <p className="text-lg">Exploring new ventures and products at <a href="https://eternalpassionproject.com">Eternal</a></p> 
+          <h1 className={`text-5xl font-bold tracking-wider ${therma.className}`}>Jani Anttonen</h1>
+          <p className="text-lg">Exploring new ventures and products at <a href="https://eternalpassionproject.com">Eternal</a>, hosting NettiRahaPodi & meetups @ TurkuAI</p> 
           <div className="flex flex-row gap-3 flex-wrap">
             <ContactInfo>Email: jani.anttonen@protonmail.ch</ContactInfo>
           </div>
