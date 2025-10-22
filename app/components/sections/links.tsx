@@ -22,7 +22,7 @@ const Links = () => {
     },
     {
       title: "Twitter",
-      url: "https://twitter.com/JaniAnttonen",
+      url: "https://twitter.com/ottnaj",
       icon: TwitterLogoIcon
     },
     {
