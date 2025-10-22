@@ -1,3 +1,4 @@
+import { triplicateCode } from "./fonts"
 
 type ContactInfoProps = {
   children?: React.ReactNode,
@@ -5,7 +6,7 @@ type ContactInfoProps = {
 }
 
 const ContactInfo = ({children, key}: ContactInfoProps) => (
-  <span key={key} className="font-mono text-sm">{children}</span>
+  <span key={key} className={`text-sm ${triplicateCode.className}`}>{children}</span>
 )
 
 export default ContactInfo

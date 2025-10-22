@@ -30,3 +30,34 @@ export const simplex = localFont({ src: [
     style: 'normal',
   },
 ]})
+
+export const triplicate = localFont({ src: [
+  {
+    path: '../../../public/fonts/triplicate_a_regular.woff2',
+    weight: '400',
+    style: 'normal',
+  },
+  {
+    path: '../../../public/fonts/triplicate_a_italic.woff2',
+    weight: '400',
+    style: 'italic',
+  },
+  {
+    path: '../../../public/fonts/triplicate_a_bold.woff2',
+    weight: '700',
+    style: 'normal',
+  },
+  {
+    path: '../../../public/fonts/triplicate_a_bold_italic.woff2',
+    weight: '700',
+    style: 'italic',
+  }
+]})
+
+export const triplicateCode = localFont({ src: [
+  {
+    path: '../../../public/fonts/triplicate_a_code_regular.woff2',
+    weight: '400',
+    style: 'normal',
+  }
+]})
